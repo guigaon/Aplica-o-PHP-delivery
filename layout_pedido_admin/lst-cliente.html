@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<title>Sistema de pedidos</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale= 1">
+		<link rel="stylesheet" href="js/datatables/css/jquery.dataTables.min.css">
+		<link rel="stylesheet" href="js/datatables/css/responsive.dataTables.min.css">
+		<link rel="stylesheet" type="text/css" href="css/DataTables_boot.css">
+
+		<link rel="stylesheet" href="css/grade.css">
+		<link rel="stylesheet" href="css/auxiliar.css">
+		<link rel="stylesheet" href="css/style.css">
+		
+		
+	</head>
+	<body>
+	<!--cabeçalho aqui-->
+		<div class="topo">
+			<a href="" class="mobmenu"><i class="fas fa-bars"></i></a>
+			<a href="index.html" class="logo"><img src="img/logo.png" class="float-left mr-2"><p class="d-inline-block">Sistema de pedidos</p></a>
+			
+		</div>
+		<div class="conteudo">
+			<div class="rows">
+				<div class="col-3 menu-lateral">
+					<div class="cx text-center text-uppercase mb-5">
+						<h1 class="h5 mb-0">Área administrativa</h1>
+					</div>
+					<div class="itens-menu">
+						<ul>
+							<li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+						</ul>
+						<div id="accordion">
+							<span><a href=""><i class="fas fa-user"></i> Cliente</a></span>
+							<ul>	
+								<li><a href="lst-cliente.html"><i class="far fa-list-alt"></i> Lista de cliente</a></li>	
+								<li><a href="frm-cliente.html"><i class="far fa-list-alt"></i> Cadastro de cliente</a></li>	
+							</ul>
+							
+							<span><a href=""><i class="fas fa-boxes"></i> Produto</a></span>
+							<ul>									
+								<li><a href="lst-produto.html"><i class="far fa-list-alt"></i> Lista de produto</a></li>
+								<li><a href="frm-produto.html"><i class="far fa-list-alt"></i> Cadastro de produto</a></li>
+							</ul>
+							<span><a href=""><i class="fas fa-search"></i> Consulta</a></span>
+							<ul>
+								<li><a href="pedidos-pendentes.html"><i class="far fa-list-alt"></i> Pedidos pendentes</a></li>
+								<li><a href="todos-pedidos.html"><i class="far fa-list-alt"></i> Todos os pendentes</a></li>
+							</ul>
+							<span><a href=""><i class="far fa-file-alt"></i> Relátorios</a></span>	
+							<ul>					 
+								<li><a href="relatorio-pedido.html"><i class="far fa-list-alt"></i> Relatórios de pedidos</a></li>
+							</ul>
+							<span><a href=""><i class="fas fa-chart-line"></i> Gráfico</a></span>	
+							<ul>		
+								<li><a href="grafico-diario.html"><i class="far fa-list-alt"></i> Gráfico diário</a></li>
+							</ul>
+						</div>
+						<ul>
+							<li><a href=""> <i class="fas fa fa-sign-out-alt" aria-hidden="true"></i> Sair</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-9 home">
+				<div class="caixa">										
+					<div class="conteudo pt-3">
+						<div class="titulo mb-4"><i class="far fa-list-alt"></i> Lista de clientes</span></div>
+						<div class="base-caixa formulario mb-4">							
+							<form action="" method="">
+								<div class="rows">
+									<div class="col-10">
+										<span class="text-label">Pesquisar por cliente</span>
+										<input type="text" placeholder="Digite seu nome" class="form-campo">
+									</div>
+									<div class="col-2 mt-4 pt-1">
+										<input type="submit" value="Pesquisar" class="btn d-table m-auto">
+									</div>
+								</div>
+							</form>
+						</div>
+						<div class="base-caixa">
+							<a href="frm-cliente.html" class="btn d-inline-block mb-2"><i class="fas fa fa-plus-circle" aria-hidden="true"></i> Cadastrar cliente</a>
+							
+							<div class="tabela-responsiva">								
+							<table width="100%" cellpadding="0" cellspacing="0" class="tabela" id="dataTable">			
+								
+								<thead>
+								<tr>
+									<th width="4%" align="left">Id:</th>
+									<th width="40%" align="left">Nome:</th>
+									<th width="40%" align="center">Email:</th>
+									<th align="center">Editar</th>
+								</tr>
+								</thead>
+								<tbody>
+																
+									<tr>
+										<td>1</td>
+										<td>Manoel Jailton Sousa</td>
+										<td align="center">mjailton</td>
+										<td align="center">
+											<a href="frm-cliente.html" class="btn btn-outline-verde">Editar</a>
+											<a href="frm-cliente.html" class="btn btn-outline-vermelho">Excluir</a>
+										</td>										
+									 </tr>
+																
+									<tr>
+										<td>1</td>
+										<td>Manoel Jailton Sousa</td>
+										<td align="center">mjailton</td>
+										<td align="center">
+											<a href="frm-cliente.html" class="btn btn-outline-verde">Editar</a>
+											<a href="frm-cliente.html" class="btn btn-outline-vermelho">Excluir</a>
+										</td>										
+									 </tr>
+																
+									<tr>
+										<td>1</td>
+										<td>Manoel Jailton Sousa</td>
+										<td align="center">mjailton</td>
+										<td align="center">
+											<a href="frm-cliente.html" class="btn btn-outline-verde">Editar</a>
+											<a href="frm-cliente.html" class="btn btn-outline-vermelho">Excluir</a>
+										</td>										
+									 </tr>
+																
+									<tr>
+										<td>1</td>
+										<td>Manoel Jailton Sousa</td>
+										<td align="center">mjailton</td>
+										<td align="center">
+											<a href="frm-cliente.html" class="btn btn-outline-verde">Editar</a>
+											<a href="frm-cliente.html" class="btn btn-outline-vermelho">Excluir</a>
+										</td>										
+									 </tr>
+																
+									<tr>
+										<td>1</td>
+										<td>Manoel Jailton Sousa</td>
+										<td align="center">mjailton</td>
+										<td align="center">
+											<a href="frm-cliente.html" class="btn btn-outline-verde">Editar</a>
+											<a href="frm-cliente.html" class="btn btn-outline-vermelho">Excluir</a>
+										</td>										
+									 </tr>
+										
+								
+								  
+								</tbody>
+								
+							</table>
+							
+							<ul class="paginacao mt-3">
+								<li><a href="#" class="link">❰ Próximo</a></li>
+								<li class="ativo">1</li>
+								<li><a href="#" class="link">2</a></li>
+								<li><a href="#" class="link">3</a></li>
+								<li><a href="#" class="link">4</a></li>
+								<li><a href="#" class="link">5</a></li>
+								<li><a href="#" class="link">Anterior ❱</a></li>
+							</ul>	
+								
+							
+						</div>
+						</div>
+					
+					</div>
+				</div>
+			</div>		
+		</div>		
+		
+		<!-- Acordeon-->
+		<script src="js/jquery.min.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>	
+		<script src="https://kit.fontawesome.com/9480317a2f.js"></script>
+		<script src="js/funcoes.js"></script>	
+		
+		<script src="js/tinymce/tinymce.min.js"></script>
+		<script src="js/datatables/js/jquery.dataTables.min.js"></script>
+		<script src="js/datatables/js/dataTables.responsive.min.js"></script>
+		<script src="js/jquery.form.js"></script>
+		<script src="js/jquery.mask.js"></script>
+		<script src="js/js.js"></script>
+		
+		<script>
+		  $( function() {
+			$( "#accordion" ).accordion({
+			  collapsible: true,
+			  autoHeight: false,
+			  active: false,
+			  navigation: true,
+			  heightStyle: "content" 
+			});
+		  });
+		</script>
+	</body>
+</html>

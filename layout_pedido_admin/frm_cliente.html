@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<title>Sistema de pedidos</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=width-device, intial-scale= 1">
+		<link rel="stylesheet" href="css/grade.css">
+		<link rel="stylesheet" href="css/auxiliar.css">
+		<link rel="stylesheet" href="css/style.css">
+		
+		<script src="js/jquery-3.3.1.min.js"></script>
+		<script src="js/funcoes.js"></script>
+		<script src="https://kit.fontawesome.com/9480317a2f.js"></script>
+		<!-- Acordeon-->
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>	
+		
+	</head>
+	<body>
+		<div class="conteudo">
+			<div class="rows">
+				<div class="col-3 menu-lateral">
+					<div class="cx text-center text-uppercase mb-5">
+						<h1 class="h5 mb-0">Área administrativa</h1>
+					</div>
+					<div class="itens-menu">
+						<ul>
+							<li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+						</ul>
+						<div id="accordion">
+							<span><a href=""><i class="fas fa-user"></i> Cliente</a></span>
+							<ul>	
+								<li><a href="lst-cliente.html"><i class="far fa-list-alt"></i> Lista de cliente</a></li>	
+								<li><a href="frm-cliente.html"><i class="far fa-list-alt"></i> Cadastro de cliente</a></li>	
+							</ul>
+							
+							<span><a href=""><i class="fas fa-boxes"></i> Produto</a></span>
+							<ul>									
+								<li><a href="lst-produto.html"><i class="far fa-list-alt"></i> Lista de produto</a></li>
+								<li><a href="frm-produto.html"><i class="far fa-list-alt"></i> Cadastro de produto</a></li>
+							</ul>
+							
+							<span><a href=""><i class="fas fa-search"></i> Consulta</a></span>
+							<ul>
+								<li><a href="pedidos-pendentes.html">Pedidos pendentes</a></li>
+								<li><a href="todos-pedidos.html">Todos os pendentes</a></li>
+							</ul>
+							<span><a href=""><i class="far fa-file-alt"></i> Relátorios</a></span>	
+							<ul>					 
+								<li><a href="relatorio-pedido.html">Relatórios de pedidos</a></li>
+							</ul>
+							<span><a href=""><i class="fas fa-chart-line"></i> Gráfico</a></span>	
+							<ul>		
+								<li><a href="grafico-diario.html">Gráfico diário</a></li>
+							</ul>
+						</div>
+						<ul>
+							<li><a href=""> <i class="fas fa fa-sign-out-alt" aria-hidden="true"></i> Sair</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-9 home">
+				<div class="caixa">
+					<div class="topo">
+						<a href="" class="mobmenu"><i class="fas fa-bars"></i></a>
+						<a href="index.html" class="logo"><img src="img/logo.png" class="float-left mr-2"><p class="d-inline-block">Sistema de pedidos</p></a>
+						
+					</div>
+					
+					<div class="conteudo pt-5 mt-3">
+						<div class="titulo mb-2"><i class="fas fa fa-plus-circle" aria-hidden="true"></i> Cadastro de clientes</span></div>
+						<div class="base-caixa formulario">							
+							<form action="" method="">
+								<div class="rows">
+									<div class="col-12">
+										<h4 class="text-uppercase pt-2">Dados pessoais</h4>
+									</div>
+									<div class="col-12">
+										<span class="text-label">Cliente</span>
+										<input type="text" placeholder="Digite seu nome" class="form-campo">
+									</div>
+									<div class="col-4">
+										<span class="text-label">Endereço</span>
+										<input type="text" placeholder="Digite seu endereço" class="form-campo">
+									</div>
+									<div class="col-4">
+										<span class="text-label">Bairro</span>
+										<input type="text" placeholder="Digite seu bairro" class="form-campo">
+									</div>
+									<div class="col-4">
+										<span class="text-label">Cidade</span>
+										<input type="text" placeholder="Digite seu cidade" class="form-campo">
+									</div>
+									<div class="col-3">
+										<span class="text-label">Telefone</span>
+										<input type="text" placeholder="Digite seu telefone" class="form-campo">
+									</div>
+									<div class="col-3">
+										<span class="text-label">Cep</span>
+										<input type="text" placeholder="Digite seu cep" class="form-campo">
+									</div>
+									<div class="col-6">
+										<span class="text-label">Logradouro</span>
+										<input type="text" placeholder="Digite seu logradouro" class="form-campo">
+									</div>
+									
+									<div class="col-12"><h4 class="text-uppercase pt-4">Dados de acesso</h4></div>
+									<div class="col-12">
+										<span class="text-label">Email</span>
+										<input type="text" placeholder="Digite seu email" class="form-campo">
+									</div>
+									<div class="col-6">
+										<span class="text-label">Login</span>
+										<input type="text" placeholder="Digite seu login" class="form-campo">
+									</div>
+									<div class="col-6">
+										<span class="text-label">Senha</span>
+										<input type="text" placeholder="Digite seu senha" class="form-campo">
+									</div>
+									<div class="col-12 mt-4 pb-4">
+										<input type="submit" value="Cadastrar" class="btn d-table m-auto">
+									</div>
+								</div>
+							</form>
+						</div>
+					
+					</div>
+				</div>
+			</div>		
+		</div>		
+	</body>
+</html>
