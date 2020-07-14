@@ -9,25 +9,25 @@
 									<div class="col-4 d-flex">
 										<div class="cx">	
 											<label class="text-label"><i class="fas fa-user"></i> Nome do cliente</label>
-											<span class="h6 mb-0">Manoel jailton sousa do nascimento</span>
+											<span class="h6 mb-0"><?php echo $pedido->cliente?></span>
 										</div>
 									</div>
 									<div class="col d-flex">
 										<div class="cx">	
 											<label class="text-label"><i class="fas fa-calendar"></i> Data</label>
-											<span class="h6 mb-0">29/11/2019</span>
+											<span class="h6 mb-0"><?php echo databr($pedido->data)?></span>
 										</div>
 									</div>
 									<div class="col d-flex">
 										<div class="cx">	
 											<label class="text-label"><i class="far fa-clock"></i> Hora</label>
-											<span class="h6 mb-0">09:04:25</span>
+											<span class="h6 mb-0"><?php echo $pedido->hora?></span>
 										</div>
 									</div>
 									<div class="col d-flex">
 										<div class="cx">	
 											<label class="text-label"><i class="fas fa-dollar-sign"></i> Valor</label>
-											<span class="h6 mb-0">09:04:25</span>
+											<span class="h6 mb-0"><?php echo $pedido->total?></span>
 										</div>
 									</div>
 								</div>
@@ -54,11 +54,11 @@
 										</div>
 										<div class="col-2">
 											<span class="text-label">Valor</span>
-											<input type="text" id="preco" value="100,00" class="form-campo">
+											<input type="text" id="valor" value="100,00" class="form-campo">
 										</div>
 										<div class="col-2 mt-3 pt-2">
 											<input type="hidden" id="id_produto"> 
-											<input type="submit" value="Inserir" class="btn btn-azul width-100">
+											<input type="button" id= "btnInserir" value="Inserir" class="btn btn-azul width-100">
 										</div>
 									</div>
 								</form>
@@ -79,15 +79,16 @@
 												</tr>
 											</thead>
 											<tbody>
+											<?php foreach($itens as $item){?>
 												<tr class="ativo">
-													<td>1</td>
-													<td>1</td>
-													<td>Café350g</td>
-													<td align="center">R$ 3.00</td>
-													<td align="center">1</td>
-													<td align="center">R$ 3</td>
+													<td><?php echo $item->id_item?></td>
+													<td><?php echo $item->produto?></td>
+													<td align="center">R$ <?php echo $item->valor?></td>
+													<td align="center"><?php echo $item->qtde?></td>
+													<td align="center">R$ <?php echo $item->total?></td>
 													<td align="center"><a href="index.php?link=3&amp;del=S&amp;i=59" class="btn btn-outline-vermelho">Excluir</a></td>
 												</tr>
+											<?php }?>	
 											</tbody>
 										</table>
 									</div>
@@ -102,3 +103,9 @@
 
 
 ?>
+
+<script>
+	
+	var id_pedido = "<?php echo $pedido->id_pedido?>";
+	
+</script>

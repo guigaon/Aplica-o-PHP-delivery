@@ -1,5 +1,28 @@
 $(function(){
    
+	$("#btnInserir").on("click", function(){
+		var id_produto = $("#id_produto").val();
+		var valor = $("#valor").val();
+		var qtde = $("#qtde").val();
+		
+		$.ajax({
+			url: base_url + "item/salvar/",
+			type: "POST",
+			dataType: "json",
+			data:{
+				id_produto: id_produto,
+				id_pedido: id_pedido,
+				qtde:qtde,
+				valor:valor
+				
+			},
+			success: function (data){
+				console.log(data);
+			
+			}
+			}); 
+   });
+   
    $("#produto").on("keyup", function(){
        var q  = $(this).val();
 	   $.ajax({
@@ -14,9 +37,9 @@ $(function(){
 					for (i = 0; i < data.length; i++) {		  
 					  html +='<div class="si"><a href="javascript:;" onclick="selecionarProduto(this)"'
 					  + 'data-id="' + data[i].id_produto +
-					  'data-nome="' + data[i].produto +
-					   '" data-valor="' + data[i].preco + '">' +
-					  data[i].produto + " - R$ " + data[i].preco + '</a></div>';
+					  '"data-nome="' + data[i].produto +
+					   '" data-valor="' + data[i].valor + '">' +
+					  data[i].produto + " - R$ " + data[i].valor + '</a></div>';
 					  
 					}
 					$(".listaProdutos").html(html);
@@ -29,12 +52,11 @@ $(function(){
 function selecionarProduto(obj){
 	var id = $(obj).attr("data-id");
 	var nome = $(obj).attr("data-nome");
-	var preco = $(obj).attr("data-valor");
+	var valor = $(obj).attr("data-valor");
 	
 	$(".listaProdutos").hide();
 	$("#produto").val(nome);
 	$("#id_produto").val(id);
-	$("#preco").val(preco);
+	$("#valor").val(valor);
 	$("#qtde").val(1);
-	$("#qtde").focus();
 }
