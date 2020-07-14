@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 06-Jul-2020 às 05:01
--- Versão do servidor: 10.4.13-MariaDB
--- versão do PHP: 7.4.7
+-- Tempo de geração: 14-Jul-2020 às 22:11
+-- Versão do servidor: 10.4.11-MariaDB
+-- versão do PHP: 7.4.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -53,8 +53,16 @@ CREATE TABLE `item` (
   `id_produto` int(11) NOT NULL,
   `id_pedido` int(11) NOT NULL,
   `valor` decimal(10,2) NOT NULL,
-  `qtde` int(11) NOT NULL
+  `qtde` int(11) NOT NULL,
+  `total` int(150) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `item`
+--
+
+INSERT INTO `item` (`id_item`, `id_produto`, `id_pedido`, `valor`, `qtde`, `total`) VALUES
+(1, 1, 1, '123.00', 1, 123);
 
 -- --------------------------------------------------------
 
@@ -67,8 +75,17 @@ CREATE TABLE `pedido` (
   `id_cliente` int(11) NOT NULL,
   `data` date NOT NULL,
   `hora` time NOT NULL,
-  `total` decimal(10,2) NOT NULL
+  `total` decimal(10,2) NOT NULL,
+  `atendido` varchar(1) NOT NULL DEFAULT 'N',
+  `finalizado` varchar(1) NOT NULL DEFAULT 'N'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `pedido`
+--
+
+INSERT INTO `pedido` (`id_pedido`, `id_cliente`, `data`, `hora`, `total`, `atendido`, `finalizado`) VALUES
+(1, 1, '2020-07-14', '09:58:30', '0.00', 'N', 'N');
 
 -- --------------------------------------------------------
 
@@ -79,8 +96,15 @@ CREATE TABLE `pedido` (
 CREATE TABLE `produto` (
   `id_produto` int(11) NOT NULL,
   `produto` varchar(50) NOT NULL,
-  `preco` decimal(10,2) NOT NULL
+  `valor` decimal(10,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `produto`
+--
+
+INSERT INTO `produto` (`id_produto`, `produto`, `valor`) VALUES
+(1, 'bosa', '123.00');
 
 --
 -- Índices para tabelas despejadas
@@ -127,19 +151,19 @@ ALTER TABLE `cliente`
 -- AUTO_INCREMENT de tabela `item`
 --
 ALTER TABLE `item`
-  MODIFY `id_item` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_item` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `pedido`
 --
 ALTER TABLE `pedido`
-  MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `produto`
 --
 ALTER TABLE `produto`
-  MODIFY `id_produto` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_produto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Restrições para despejos de tabelas
