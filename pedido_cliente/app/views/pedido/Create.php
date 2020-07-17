@@ -70,7 +70,6 @@
 											<thead>
 												<tr>
 													<th width="2%" align="left">Item</th>
-													<th width="2%" align="left">Id</th>
 													<th width="48%" align="left">Produto</th>
 													<th width="16%" align="center">Preço</th>
 													<th width="8%" align="center">Quantidade</th>							
@@ -78,7 +77,7 @@
 													<th width="15%" align="center">Excluir</th>
 												</tr>
 											</thead>
-											<tbody>
+											<tbody id = "lista_itens">
 											<?php foreach($itens as $item){?>
 												<tr class="ativo">
 													<td><?php echo $item->id_item?></td>
@@ -86,7 +85,7 @@
 													<td align="center">R$ <?php echo $item->valor?></td>
 													<td align="center"><?php echo $item->qtde?></td>
 													<td align="center">R$ <?php echo $item->total?></td>
-													<td align="center"><a href="index.php?link=3&amp;del=S&amp;i=59" class="btn btn-outline-vermelho">Excluir</a></td>
+													<td align="center"><a href="javascript:;" onclick="return excluir_item(this)" data-entidade = "item" data-id="<?php echo $item->id_item?>"class="btn btn-outline-vermelho">Excluir</a></td>
 												</tr>
 											<?php }?>	
 											</tbody>

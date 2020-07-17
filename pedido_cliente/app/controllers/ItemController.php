@@ -21,6 +21,8 @@ class ItemController extends Controller{
         
         Flash::setForm($item);
         itemService::salvar($item, $this->campo, $this->tabela);
+        $lista = ItemService::listaPorPedido($item->id_pedido);
+        echo json_encode($lista);
         
     }
     
