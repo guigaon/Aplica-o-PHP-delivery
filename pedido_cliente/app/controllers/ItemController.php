@@ -26,9 +26,10 @@ class ItemController extends Controller{
         
     }
     
-    public function excluir($id){
-        Service::excluir($this->tabela, $this->campo, $id);
-        $this->redirect(URL_BASE."item");
+    public function excluir($id_item, $id_pedido){
+        Service::excluir($this->tabela, $this->campo, $id_item);
+        $lista = ItemService::listaPorPedido($id_pedido);
+        echo json_encode($lista);
     }
 }
 
