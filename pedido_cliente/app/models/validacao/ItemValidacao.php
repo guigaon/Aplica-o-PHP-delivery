@@ -2,6 +2,7 @@
 namespace app\models\validacao;
 
 use app\core\Validacao;
+use app\models\service\ItemService;
 
 class ItemValidacao{
     public static function salvar($item){
@@ -17,6 +18,11 @@ class ItemValidacao{
         $validacao->getData("id_pedido")->isVazio();
         $validacao->getData("valor")->isVazio();
         $validacao->getData("qtde")->isVazio();
+        
+        $tem = ItemService::getItem($item->id_pedido, $item->id_produto);
+        if($tem){
+            $validacao->getData("id_produto")->isUnico(1, "Este produto já foi inserido");
+        }
         
         return $validacao;
         

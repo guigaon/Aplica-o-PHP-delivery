@@ -85,7 +85,7 @@
 													<td align="center">R$ <?php echo $item->valor?></td>
 													<td align="center"><?php echo $item->qtde?></td>
 													<td align="center">R$ <?php echo $item->total?></td>
-													<td align="center"><a href="javascript:;" onclick="return excluir(this)" data-entidade = "item" data-id="<?php echo $item->id_item?>"class="btn btn-outline-vermelho">Excluir</a></td>
+													<td align="center"><a href="javascript:;" onclick="return excluir_item(this)" data-entidade = "item" data-id="<?php echo $item->id_item ?>"class="btn btn-outline-vermelho">Excluir</a></td>
 												</tr>
 											<?php }?>	
 											</tbody>
@@ -98,13 +98,6 @@
 								</div>
 						</div>
 					</div>
-			
-
-
-?>
-
 <script>
-	
-	var id_pedido = "<?php echo $pedido->id_pedido?>";
-	
+	var id_pedido = "<?php echo $pedido->id_pedido ?>";	
 </script>

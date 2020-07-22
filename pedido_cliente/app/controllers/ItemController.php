@@ -20,9 +20,17 @@ class ItemController extends Controller{
         $item->total 			= $item->valor * $item->qtde;
         
         Flash::setForm($item);
-        itemService::salvar($item, $this->campo, $this->tabela);
+        if(itemService::salvar($item, $this->campo, $this->tabela)){
+            $erro = -1;
+            $msg = Flash::getMsg();
+        }else{
+            $erro = 1;
+            $msg = Flash::getErro();            
+        }
+        
+        //PedidoService::atualizarPedido($item->id_pedido);
         $lista = ItemService::listaPorPedido($item->id_pedido);
-        echo json_encode($lista);
+        echo json_encode(["erro" => $erro, "msg" => $msg, "lista" => $lista]);
         
     }
     

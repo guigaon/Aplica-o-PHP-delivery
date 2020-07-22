@@ -17,7 +17,11 @@ $(function(){
 				
 			},
 			success: function (data){
-				lista_itens(data);
+				console.log(data);
+				if(data.erro > 0 ){
+					alert(data.erro[0]);
+				}
+				lista_itens(data.lista); //pega lista e erro do ItemController, array no encode_jason
 			
 			}
 			}); 
@@ -37,7 +41,7 @@ $(function(){
 					for (i = 0; i < data.length; i++) {		  
 					  html +='<div class="si"><a href="javascript:;" onclick="selecionarProduto(this)"'
 					  + 'data-id="' + data[i].id_produto +
-					  '"data-nome="' + data[i].produto +
+					  '" data-nome="' + data[i].produto +
 					   '" data-valor="' + data[i].valor + '">' +
 					  data[i].produto + " - R$ " + data[i].valor + '</a></div>';
 					  
@@ -48,7 +52,7 @@ $(function(){
 			}); 
    });
    
-
+}); //FECHA AS FUNÇÕES AQUI, NAO EXCLUIR ESSE
 function lista_itens(data){    
     html = "<tr>";
     var total_entrada = 0.00;
@@ -60,7 +64,7 @@ function lista_itens(data){
             '<td align="left">' + data[i].valor + '</td>' + 
             '<td align="left">' + data[i].qtde + '</td>' +
         	'<td align="left">' + data[i].total + '</td>' +
-			'<td align="center"><a href="javascript:;" onclick="return excluir_item(this)" data-entidade = "item" data-id="' + data[i].id_item + '"class="btn btn-outline-vermelho">Excluir</a></td></tr>';
+			'<td align="center"><a href="javascript:;" onclick="return excluir_item(this)" data-entidade= "item" data-id="' + data[i].id_item + '"class="btn btn-outline-vermelho">Excluir</a></td></tr>';
 
      }
      
@@ -78,6 +82,7 @@ function selecionarProduto(obj){
 	$("#id_produto").val(id);
 	$("#valor").val(valor);
 	$("#qtde").val(1);
+	$("#qtde").focus();
 }
 
 function excluir_item(obj){
@@ -85,7 +90,7 @@ function excluir_item(obj){
 	var id  		= $(obj).attr('data-id');	
 	if(confirm('Deseja realmente excluir ?')){
 			 $.ajax({
-				  url:base_url + entidade +"/excluir/" + id + "/" + id_pedido,
+				  url:base_url + entidade +"/excluir/" + id +"/" + id_pedido,
 				  type: "POST",
 				  dataType: "json",
 				  data:{},
@@ -97,4 +102,3 @@ function excluir_item(obj){
 	}
 }
 
-});
